@@ -99,6 +99,8 @@ th { font: 500 12px var(--mono); color: var(--muted); }
 td { font-family: var(--mono); }
 tr:last-child td { border-bottom: 0; }
 .neg { color: var(--warn); font-weight: 500; }
+.pred td.y { color: var(--good); }
+.pred td.n { color: var(--warn); font-weight: 500; }
 
 .next { display: grid; gap: 10px; }
 .task { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; display: grid; grid-template-columns: 34px 1fr; gap: 12px; }
@@ -143,21 +145,21 @@ footer { font-size: 13px; color: var(--muted); }
 <section>
   <h2>Progress</h2>
   <div class="card">
-    <div class="bar" aria-label="5 done, 2 running, 6 to do">
-      <span style="flex:5;background:var(--good)"></span><span style="flex:2;background:var(--warn)"></span><span style="flex:6;background:transparent"></span>
+    <div class="bar" aria-label="7 done, 3 running, 4 to do">
+      <span style="flex:7;background:var(--good)"></span><span style="flex:3;background:var(--warn)"></span><span style="flex:4;background:transparent"></span>
     </div>
-    <div class="barkey"><span class="done">5 done</span><span class="doing">2 running</span><span>6 to do</span></div>
+    <div class="barkey"><span class="done">7 done</span><span class="doing">3 running</span><span>4 to do</span></div>
   </div>
   <div class="progress">
     <div class="row"><span class="chip done">done</span><div><h3>Setup on Clariden</h3><p>Repo, training and serving containers, Megatron-LM, one-command benchmark scripts.</p></div></div>
-    <div class="row"><span class="chip done">done</span><div><h3>Network inside one node</h3><p>262 GB/s between the 4 GPUs of a node.</p></div></div>
+    <div class="row"><span class="chip done">done</span><div><h3>Network on 1 and 2 nodes</h3><p>262 GB/s inside a node, 40 GB/s across 2 nodes (6.5× slower).</p></div></div>
     <div class="row"><span class="chip done">done</span><div><h3>Training baseline sweep</h3><p>20 runs: dense and g2–g16 on 1–8 nodes, no optimisations. Results below.</p></div></div>
     <div class="row"><span class="chip done">done</span><div><h3>First serving run</h3><p>Qwen3-30B-A3B on one node, no optimisations: 1,922 tokens/s per GPU.</p></div></div>
+    <div class="row"><span class="chip done">done</span><div><h3>Prediction of the cliff (first version)</h3><p><code>theory/roofline.py</code> predicts which models wait on the network at each node count. Uses measured 1- and 2-node bandwidth; 4 and 8 nodes estimated until measured.</p></div></div>
     <div class="row"><span class="chip done">done</span><div><h3>Plain-language explainer</h3><p><code>docs/explainer.md</code> in the repo: MoE, nodes, g1–g16, the experiments.</p></div></div>
-    <div class="row"><span class="chip doing">running</span><div><h3>Network across 2, 4, 8 nodes</h3><p>Jobs submitted. Gives the Slingshot speed the prediction needs.</p></div></div>
-    <div class="row"><span class="chip doing">running</span><div><h3>g1 rerun</h3><p>Failed in the sweep because top-1 routing needs an extra flag; fixed.</p></div></div>
-    <div class="row"><span class="chip todo">to do</span><div><h3>Prediction of the cliff</h3><p>Plug the measured network speed into the formula, before looking at new training results.</p></div></div>
-    <div class="row"><span class="chip todo">to do</span><div><h3>Sweep with grouped GEMM</h3><p>Same grid with experts computed in one batch, so the remaining slowdown is the network alone.</p></div></div>
+    <div class="row"><span class="chip doing">running</span><div><h3>Network on 4 and 8 nodes</h3><p>Queued tonight. Replaces the two estimated rows of the prediction with measurements.</p></div></div>
+    <div class="row"><span class="chip doing">running</span><div><h3>g1 rerun</h3><p>Failed in the sweep because top-1 routing needs an extra flag; fixed and resubmitted on 1 and 2 nodes.</p></div></div>
+    <div class="row"><span class="chip doing">running</span><div><h3>Sweep with grouped GEMM</h3><p>The full grid again (about 22 runs) with experts computed in one batch, so the remaining slowdown is the network alone.</p></div></div>
     <div class="row"><span class="chip todo">to do</span><div><h3>Training tricks one at a time</h3><p>Fusion, FP8, comm overlap, group-limited routing, DeepEP, on a fast case and a slow case.</p></div></div>
     <div class="row"><span class="chip todo">to do</span><div><h3>Serving tricks one at a time</h3><p>CUDA graphs, expert parallel, FP8 KV cache, FP8 weights.</p></div></div>
     <div class="row"><span class="chip todo">to do</span><div><h3>Headline run</h3><p>One much larger model on as many nodes as we can get, fully optimised.</p></div></div>
@@ -207,16 +209,67 @@ footer { font-size: 13px; color: var(--muted); }
   </div>
 
   <div class="card finding">
-    <h3>Network: one node</h3>
-    <p>GPUs inside a node exchange data at up to <b>262 GB/s</b> (large messages). The multi-node numbers are running now; we expect roughly 10× less over Slingshot.</p>
+    <h3>Network: how fast GPUs exchange data</h3>
+    <p>All-to-all bandwidth per GPU with large messages (256 MB), the same pattern MoE uses to send tokens to experts. The 1-node figure was the same in three separate runs.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>setup</th><th>GPUs</th><th>bandwidth</th><th>status</th></tr></thead>
+        <tbody>
+          <tr><td>1 node (NVLink only)</td><td>4</td><td>262 GB/s</td><td><span class="chip done">measured</span></td></tr>
+          <tr><td>2 nodes (half over Slingshot)</td><td>8</td><td>40 GB/s</td><td><span class="chip done">measured</span></td></tr>
+          <tr><td>4 nodes</td><td>16</td><td>~31 GB/s</td><td><span class="chip doing">running</span></td></tr>
+          <tr><td>8 nodes</td><td>32</td><td>~28 GB/s</td><td><span class="chip doing">running</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Spreading over 2 nodes makes the exchange <b>6.5× slower</b>. It matches the hardware: about 4/7 of each GPU's outgoing traffic crosses to the other node, and 40 × 4/7 ≈ 23 GB/s, close to the 25 GB/s each GPU's network card is rated for.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The prediction</h2>
+  <div class="card finding">
+    <p>A GPU can compute and send at the same time. The network stays hidden as long as each expert has enough work to cover the time its tokens spend travelling. From the DeepSeek-V4 paper, that holds when the expert width is at least</p>
+    <p style="font:500 16px var(--mono);color:var(--ink)">d* = GPU speed ÷ (2 × network bandwidth)</p>
+    <p>With the GPU at 300 TFLOP/s (what the dense model reached) and the measured bandwidth:</p>
+    <div class="scroll">
+      <table class="pred">
+        <thead><tr><th>nodes</th><th>bandwidth</th><th>d*</th><th>g1 · 8192</th><th>g2 · 4096</th><th>g4 · 2048</th><th>g8 · 1024</th><th>g16 · 512</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>262 GB/s</td><td>573</td><td class="y">hidden</td><td class="y">hidden</td><td class="y">hidden</td><td class="y">hidden</td><td class="n">waits</td></tr>
+          <tr><td>2</td><td>40 GB/s</td><td>~3,400</td><td class="y">hidden</td><td class="y">hidden</td><td class="n">waits</td><td class="n">waits</td><td class="n">waits</td></tr>
+          <tr><td>4</td><td>~31 GB/s</td><td>~4,800</td><td class="y">hidden</td><td class="n">waits</td><td class="n">waits</td><td class="n">waits</td><td class="n">waits</td></tr>
+          <tr><td>8</td><td>~28 GB/s</td><td>~5,400</td><td class="y">hidden</td><td class="n">waits</td><td class="n">waits</td><td class="n">waits</td><td class="n">waits</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ol>
+      <li><b>On one node almost every model is fine</b>: NVLink is fast enough even for small experts.</li>
+      <li><b>From 2 nodes, models with experts narrower than about 3,000–5,000 should wait on the network</b>: g4, g8, g16, and g2 from 4 nodes. Only g1 stays safe everywhere.</li>
+      <li><b>The network model already checks out</b>: it estimated 44 GB/s for 2 nodes before the measurement came back at 40 GB/s.</li>
+      <li><b>Faster GPUs make it worse.</b> At the 120 TFLOP/s the baseline actually reached, only g8 and g16 cross the line. Every trick that speeds up the maths (grouped GEMM, FP8) moves the cliff towards bigger experts. The grouped-GEMM sweep running now tests exactly this.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Running now: the grouped-GEMM sweep</h2>
+  <div class="card finding">
+    <p>In the baseline each GPU computes its experts one after another: for g16 on one node that is 32 small jobs in a row, and the GPU sits mostly idle. <b>Grouped GEMM computes all of a GPU's experts as one big job.</b></p>
+    <p>The sweep repeats the full grid with this one trick turned on. It should show three things:</p>
+    <ol>
+      <li><b>How much grouped GEMM helps</b> on its own, compared with the baseline. Largest gain expected for g8 and g16.</li>
+      <li><b>Whether only the network is left</b>: on one node all models should now run at about the same speed, so any slowdown across nodes is the network.</li>
+      <li><b>Whether the cliff moves</b> towards bigger experts, as the prediction says it should when the GPU computes faster.</li>
+    </ol>
   </div>
 </section>
 
 <section>
   <h2>What needs doing next</h2>
   <div class="next">
-    <div class="task"><span class="n">01</span><div><h3>Read the network results and write the prediction</h3><p>Collect the 2/4/8-node bandwidth, compute the expected cliff for each node count, commit it before the new sweep finishes.</p><span class="who">Chris · this week</span></div></div>
-    <div class="task"><span class="n">02</span><div><h3>Grouped-GEMM sweep</h3><p><code>bench/sweep.sh grouped_gemm 1 2 4 8</code>, then compare with the prediction.</p><span class="who">proposed: Alexandros · this week</span></div></div>
+    <div class="task"><span class="n">01</span><div><h3>Finish the prediction</h3><p>Add the 4- and 8-node bandwidth, rerun <code>python3 theory/roofline.py</code>, and fix the prediction before the grouped-GEMM results are looked at.</p><span class="who">Chris · tomorrow</span></div></div>
+    <div class="task"><span class="n">02</span><div><h3>Analyse the grouped-GEMM sweep</h3><p>Compare with the baseline and with the prediction; plot speed against expert width per node count.</p><span class="who">proposed: Alexandros · this week</span></div></div>
     <div class="task"><span class="n">03</span><div><h3>Training tricks, one at a time</h3><p>On g4 / 1 node and g16 / 4 nodes: <code>fusion</code>, <code>fp8</code>, <code>overlap_a2a</code>, <code>grouplimit</code>, <code>deepep</code>; then the best combination and the large headline run.</p><span class="who">proposed: Theo · weeks 2–3</span></div></div>
     <div class="task"><span class="n">04</span><div><h3>Serving tricks, one at a time</h3><p><code>cudagraph</code>, <code>ep</code>, <code>fp8kv</code>, FP8 checkpoint; a coarse MoE (Mixtral) for comparison.</p><span class="who">proposed: Darius · weeks 2–3</span></div></div>
     <div class="task"><span class="n">05</span><div><h3>Report</h3><p>Prediction vs measurement plot, table of each trick's effect, best training and serving numbers.</p><span class="who">everyone · week of 14 Dec</span></div></div>
@@ -233,7 +286,10 @@ footer { font-size: 13px; color: var(--muted); }
       <dt>Dense</dt><dd>A normal model without experts, for comparison.</dd>
       <dt>tokens/s per GPU</dt><dd>The course's speed metric: how many tokens each GPU processes per second.</dd>
       <dt>Baseline</dt><dd>A run with no optimisations turned on. Every trick is compared against it.</dd>
-      <dt>Grouped GEMM</dt><dd>Computing all of a GPU's experts in one batch instead of one by one.</dd>
+      <dt>Grouped GEMM</dt><dd>Computing all of a GPU's experts in one batch instead of one by one. GEMM is the name for a matrix multiplication.</dd>
+      <dt>All-to-all</dt><dd>Every GPU sending data to every other GPU at once: how tokens reach their experts.</dd>
+      <dt>Bandwidth</dt><dd>How much data per second the network moves, in GB/s.</dd>
+      <dt>d* (the cliff)</dt><dd>The smallest expert width at which the GPU still never waits for the network.</dd>
     </dl>
   </div>
 </section>
