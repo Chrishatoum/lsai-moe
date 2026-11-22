@@ -24,10 +24,10 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 - Never run compute on the login node; use `sbatch` or `srun --partition=debug`.
 
 ## Layout
-- `env/` container definition and setup
-- `benchmarks/nccl/` all-to-all bandwidth benchmark
+- `env/` containers (PyTorch for Megatron, vLLM), Megatron checkout, `setup.sh`
+- `bench/` benchmark harness, see `bench/README.md`: `submit.sh`, `train/` (models, levers, sbatch), `serve/`, `nccl/`, `parse.py`
 - `theory/` roofline prediction
-- `results/` raw logs
+- `results/logs/` raw job logs, `results/*.csv` parsed results
 
 ## Conventions
 - Concise, minimal code; no excessive comments or docstrings.
@@ -35,6 +35,8 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 
 ## Status
 - [x] Repo skeleton, all-to-all benchmark
-- [ ] Container imported, a2a benchmark run on 1/2/4 nodes
+- [x] Benchmark harness for training levers and serving levers
+- [ ] setup.sh run (containers, Megatron), a2a benchmark on 1/2/4 nodes
+- [ ] First Megatron run works (g4 baseline, 1 node), first vLLM run works
 - [ ] Roofline predictor using measured bandwidth
 - [ ] Megatron MoE baseline and granularity sweep

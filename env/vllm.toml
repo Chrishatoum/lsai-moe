@@ -1,0 +1,10 @@
+image = "/iopsstor/scratch/cscs/course_00651/vllm-26.08.sqsh"
+mounts = ["/iopsstor/scratch/cscs/course_00651:/iopsstor/scratch/cscs/course_00651", "/users/course_00651:/users/course_00651"]
+workdir = "/users/course_00651/lsai-moe"
+
+[env]
+HF_HOME = "/iopsstor/scratch/cscs/course_00651/hf"
+
+[annotations]
+com.hooks.aws_ofi_nccl.enabled = "true"
+com.hooks.aws_ofi_nccl.variant = "cuda-dl"
