@@ -43,5 +43,5 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 - [x] First Megatron run (g4 baseline 1 node: ~16k tok/s/GPU, 122 TFLOP/s), first vLLM run (Qwen3-30B-A3B baseline TP4: 1922 out tok/s/GPU, p50 TTFT 3.3 s, p50 TPOT 50 ms)
 - [x] Baseline sweep g1-g16 x 1-8 nodes (results/train.csv); g1 failed (needs --moe-router-pre-softmax, fixed). Baseline has no grouped GEMM, so 1-node throughput already falls with granularity (sequential experts)
 - [ ] Rerun g1; a2a on 2/4/8 nodes; grouped_gemm sweep as the real base for the comm study
-- [ ] Roofline predictor using measured bandwidth
+- [x] Roofline predictor `theory/roofline.py [TFLOPs]`: 1 node 262 GB/s measured, 2 nodes 40 GB/s measured (model estimated 44); 4/8 nodes pending
 - [ ] Megatron MoE baseline and granularity sweep
