@@ -268,11 +268,11 @@ footer { font-size: 13px; color: var(--muted); }
 <section>
   <h2>What needs doing next</h2>
   <div class="next">
-    <div class="task"><span class="n">01</span><div><h3>Finish the prediction</h3><p>Add the 4- and 8-node bandwidth, rerun <code>python3 theory/roofline.py</code>, and fix the prediction before the grouped-GEMM results are looked at.</p><span class="who">Chris · tomorrow</span></div></div>
-    <div class="task"><span class="n">02</span><div><h3>Analyse the grouped-GEMM sweep</h3><p>Compare with the baseline and with the prediction; plot speed against expert width per node count.</p><span class="who">proposed: Alexandros · this week</span></div></div>
-    <div class="task"><span class="n">03</span><div><h3>Training tricks, one at a time</h3><p>On g4 / 1 node and g16 / 4 nodes: <code>fusion</code>, <code>fp8</code>, <code>overlap_a2a</code>, <code>grouplimit</code>, <code>deepep</code>; then the best combination and the large headline run.</p><span class="who">proposed: Theo · weeks 2–3</span></div></div>
-    <div class="task"><span class="n">04</span><div><h3>Serving tricks, one at a time</h3><p><code>cudagraph</code>, <code>ep</code>, <code>fp8kv</code>, FP8 checkpoint; a coarse MoE (Mixtral) for comparison.</p><span class="who">proposed: Darius · weeks 2–3</span></div></div>
-    <div class="task"><span class="n">05</span><div><h3>Report</h3><p>Prediction vs measurement plot, table of each trick's effect, best training and serving numbers.</p><span class="who">everyone · week of 14 Dec</span></div></div>
+    <div class="task"><span class="n">01</span><div><h3>Finish the prediction</h3><p>Add the 4- and 8-node bandwidth, rerun <code>python3 theory/roofline.py</code>, and fix the prediction before the grouped-GEMM results are looked at.</p></div></div>
+    <div class="task"><span class="n">02</span><div><h3>Analyse the grouped-GEMM sweep</h3><p>Compare with the baseline and with the prediction; plot speed against expert width per node count.</p></div></div>
+    <div class="task"><span class="n">03</span><div><h3>Training tricks, one at a time</h3><p>On g4 / 1 node and g16 / 4 nodes: <code>fusion</code>, <code>fp8</code>, <code>overlap_a2a</code>, <code>grouplimit</code>, <code>deepep</code>; then the best combination and the large headline run.</p></div></div>
+    <div class="task"><span class="n">04</span><div><h3>Serving tricks, one at a time</h3><p><code>cudagraph</code>, <code>ep</code>, <code>fp8kv</code>, FP8 checkpoint; a coarse MoE (Mixtral) for comparison.</p></div></div>
+    <div class="task"><span class="n">05</span><div><h3>Report</h3><p>Prediction vs measurement plot, table of each trick's effect, best training and serving numbers.</p></div></div>
   </div>
 </section>
 
