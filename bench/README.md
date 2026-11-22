@@ -35,6 +35,8 @@ h = 2048, 16 layers, seq 4096. Active FFN compute and total expert parameters ar
 
 Combine levers with commas. Report each lever alone against baseline, then the best combination.
 
+Whole grid in one go: `bench/sweep.sh baseline 1 2 4 8` (skips combinations with fewer experts than GPUs).
+
 ## Serving (vLLM, one node, random prompts, `vllm bench serve`)
 
 ```bash
