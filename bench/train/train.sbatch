@@ -5,7 +5,7 @@
 #SBATCH --time=00:20:00
 #SBATCH --output=results/logs/train-%j.out
 set -e
-cd ~/lsai-moe
+cd "$SLURM_SUBMIT_DIR"
 source env/containers.sh
 MODEL=${MODEL:-g4}; LEVER=${LEVER:-baseline}; EP=${EP:-$SLURM_NTASKS}
 source bench/train/models.sh

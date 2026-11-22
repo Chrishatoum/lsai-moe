@@ -6,7 +6,7 @@
 #SBATCH --time=00:40:00
 #SBATCH --output=results/logs/serve-%j.out
 set -e
-cd ~/lsai-moe
+cd "$SLURM_SUBMIT_DIR"
 source env/containers.sh
 SMODEL=${SMODEL:-Qwen/Qwen3-30B-A3B}; LEVER=${LEVER:-baseline}; GPUS=${GPUS:-4}
 IN=${IN:-1024}; OUT=${OUT:-512}; N=${N:-512}; RATE=${RATE:-inf}

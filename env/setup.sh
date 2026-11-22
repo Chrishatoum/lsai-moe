@@ -3,8 +3,9 @@ set -e
 cd "$(dirname "$0")/.."
 source env/containers.sh
 mkdir -p ~/.edf "$HF_HOME" results/logs
-cp env/pytorch.toml ~/.edf/pytorch.toml
-cp env/vllm.toml ~/.edf/vllm.toml
+for t in pytorch vllm; do
+  sed -e "s|SCRATCH_PATH|$SQ|g" -e "s|REPO_PATH|$PWD|g" -e "s|HOME_PATH|$HOME|g" env/$t.toml > ~/.edf/$t.toml
+done
 
 run() { srun --account=lsaiews26 --partition=debug -N1 -t 00:30:00 "$@"; }
 

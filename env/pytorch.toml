@@ -1,7 +1,7 @@
-image = "/iopsstor/scratch/cscs/course_00651/pytorch-25.06.sqsh"
+image = "SCRATCH_PATH/pytorch-25.06.sqsh"
 
-mounts = ["/iopsstor/scratch/cscs/course_00651:/iopsstor/scratch/cscs/course_00651", "/users/course_00651:/users/course_00651"]
-workdir = "/users/course_00651/lsai-moe"
+mounts = ["SCRATCH_PATH:SCRATCH_PATH", "HOME_PATH:HOME_PATH"]
+workdir = "REPO_PATH"
 
 [annotations]
 com.hooks.aws_ofi_nccl.enabled = "true"

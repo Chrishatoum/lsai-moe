@@ -20,7 +20,7 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 ## Cluster
 - Clariden (aarch64 GH200, 4 GPUs/node). User `course_00651`, SLURM account `lsaiews26`, partitions `normal` and `debug`.
 - Job I/O on `/iopsstor/scratch/cscs/course_00651`; home has a 50 GB quota.
-- Container: NGC PyTorch 25.06 squashfs on iopsstor, EDF `~/.edf/pytorch.toml` (from `env/pytorch.toml`) with the aws_ofi_nccl hook. Use `--environment=pytorch`.
+- Containers on iopsstor; `env/setup.sh` fills user and repo paths into `~/.edf/pytorch.toml` and `~/.edf/vllm.toml` (templates in `env/`). Job scripts run from `$SLURM_SUBMIT_DIR`, so any clone location and any user works.
 - Never run compute on the login node; use `sbatch` or `srun --partition=debug`.
 - Login node has `python3`, not `python`.
 
