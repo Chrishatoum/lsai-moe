@@ -22,6 +22,7 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 - Job I/O on `/iopsstor/scratch/cscs/course_00651`; home has a 50 GB quota.
 - Container: NGC PyTorch 25.06 squashfs on iopsstor, EDF `~/.edf/pytorch.toml` (from `env/pytorch.toml`) with the aws_ofi_nccl hook. Use `--environment=pytorch`.
 - Never run compute on the login node; use `sbatch` or `srun --partition=debug`.
+- Login node has `python3`, not `python`.
 
 ## Layout
 - `env/` containers (PyTorch for Megatron, vLLM), Megatron checkout, `setup.sh`
@@ -38,7 +39,9 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 - [x] Repo skeleton, all-to-all benchmark
 - [x] Benchmark harness for training levers and serving levers
 - [x] setup.sh run: PyTorch 25.06 + vLLM 26.08 containers, Megatron core_v0.14.0, driver 595.91
-- [ ] a2a benchmark on 1/2/4 nodes (job 4005020)
-- [ ] First Megatron run (g4 baseline, 1 node, job 4005021), first vLLM run (Qwen3-30B-A3B baseline, job 4005022)
+- [x] a2a 1 node: 262 GB/s busbw at 256 MB, AWS Libfabric loaded. Multi-node steps inside one allocation timed out; a2a.sbatch now runs once per node count
+- [x] First Megatron run (g4 baseline 1 node: ~16k tok/s/GPU, 122 TFLOP/s), first vLLM run (Qwen3-30B-A3B baseline TP4: 1922 out tok/s/GPU, p50 TTFT 3.3 s, p50 TPOT 50 ms)
+- [x] Baseline sweep g1-g16 x 1-8 nodes (results/train.csv); g1 failed (needs --moe-router-pre-softmax, fixed). Baseline has no grouped GEMM, so 1-node throughput already falls with granularity (sequential experts)
+- [ ] Rerun g1; a2a on 2/4/8 nodes; grouped_gemm sweep as the real base for the comm study
 - [ ] Roofline predictor using measured bandwidth
 - [ ] Megatron MoE baseline and granularity sweep

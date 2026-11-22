@@ -57,4 +57,6 @@ Workload via env: `IN`, `OUT`, `N`, `RATE` (default 1024/512/512/inf). FP8 or MX
 
 ## Network
 
-`sbatch bench/nccl/a2a.sbatch` measures all-to-all bandwidth on 1/2/4 nodes.
+`for n in 1 2 4 8; do sbatch -N $n bench/nccl/a2a.sbatch; done` measures all-to-all bandwidth per node count.
+
+On the login node use `python3`, not `python`: `python3 bench/parse.py`.

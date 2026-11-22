@@ -2,7 +2,7 @@
 H=2048; HEADS=16; SEQ=${SEQ:-4096}; LAYERS=${LAYERS:-16}
 case $MODEL in
   dense) MODEL_ARGS=(--ffn-hidden-size 8192) ;;
-  g1)  MODEL_ARGS=(--num-experts 8   --moe-router-topk 1  --moe-ffn-hidden-size 8192) ;;
+  g1)  MODEL_ARGS=(--num-experts 8   --moe-router-topk 1  --moe-ffn-hidden-size 8192 --moe-router-pre-softmax) ;;
   g2)  MODEL_ARGS=(--num-experts 16  --moe-router-topk 2  --moe-ffn-hidden-size 4096) ;;
   g4)  MODEL_ARGS=(--num-experts 32  --moe-router-topk 4  --moe-ffn-hidden-size 2048) ;;
   g8)  MODEL_ARGS=(--num-experts 64  --moe-router-topk 8  --moe-ffn-hidden-size 1024) ;;
