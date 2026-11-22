@@ -6,3 +6,4 @@ How fine can MoE experts get before expert-parallel communication dominates thro
 - `bench/` benchmark harness for training, serving and network (see bench/README.md)
 - `env/` container definitions
 - `results/` raw logs
+- `docs/explainer.md` plain-language explanation of the project

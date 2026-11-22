@@ -27,6 +27,7 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 - `env/` containers (PyTorch for Megatron, vLLM), Megatron checkout, `setup.sh`
 - `bench/` benchmark harness, see `bench/README.md`: `submit.sh`, `train/` (models, levers, sbatch), `serve/`, `nccl/`, `parse.py`
 - `theory/` roofline prediction
+- `docs/explainer.md` plain-language explanation of MoE, nodes, g1–g16 and the experiments
 - `results/logs/` raw job logs, `results/*.csv` parsed results
 
 ## Conventions
