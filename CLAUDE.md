@@ -37,7 +37,8 @@ DeepSeek-V4 rule: each token-expert pair costs 6·h·d FLOPs and 3·h bytes (FP8
 ## Status
 - [x] Repo skeleton, all-to-all benchmark
 - [x] Benchmark harness for training levers and serving levers
-- [ ] setup.sh run (containers, Megatron), a2a benchmark on 1/2/4 nodes
-- [ ] First Megatron run works (g4 baseline, 1 node), first vLLM run works
+- [x] setup.sh run: PyTorch 25.06 + vLLM 26.08 containers, Megatron core_v0.14.0, driver 595.91
+- [ ] a2a benchmark on 1/2/4 nodes (job 4005020)
+- [ ] First Megatron run (g4 baseline, 1 node, job 4005021), first vLLM run (Qwen3-30B-A3B baseline, job 4005022)
 - [ ] Roofline predictor using measured bandwidth
 - [ ] Megatron MoE baseline and granularity sweep
