@@ -124,6 +124,25 @@ GPUs can send and compute at the same time. While an expert works on one token, 
 
 Restaurant version: chefs are experts, kitchens are GPUs, buildings are nodes. Trays move instantly inside a building and by slow van between buildings. One big chef cooking 16 minutes never waits for the van. Sixteen small chefs cooking 1 minute each, spread over several buildings, spend most of their time waiting for vans.
 
+## The second reason small experts are slow: GPU inefficiency
+
+A GPU has thousands of small calculators working in parallel and is fastest on **one big matrix multiplication** that keeps them all busy. Tiny experts give it many small multiplications instead:
+
+1. **Not enough work to fill the GPU**: many calculators sit idle.
+2. **Fixed overhead per job**: starting each job costs time regardless of size; many tiny jobs add up.
+3. **Memory-bound**: for small jobs, loading the numbers takes longer than multiplying them.
+
+Restaurant version: a full kitchen with 16 tiny dishes leaves most stoves unused and spends its time setting up each dish.
+
+So smaller experts can be slower for two different reasons:
+
+| Reason | Where it happens |
+|---|---|
+| **Network**: GPUs wait for copies over Slingshot | only across nodes |
+| **GPU inefficiency**: tiny maths jobs | everywhere, even on 1 node |
+
+**The 1-node runs are the control.** On 1 node the network is fast, so if g16 is slower than g1 there, that is GPU inefficiency. The *extra* slowdown on several nodes on top of that is the network effect. The `grouped_gemm` trick targets GPU inefficiency by bundling all small expert jobs on a GPU into one big job.
+
 ## The prediction
 
 From the DeepSeek-V4 paper: per token and expert, compute is 6·h·d FLOPs and traffic is 3·h bytes (FP8 send, BF16 return). Sending stays hidden when
@@ -197,6 +216,27 @@ for t in baseline cudagraph ep fp8kv; do bench/submit.sh serve Qwen/Qwen3-30B-A3
 ```
 
 All results land in `results/train.csv` and `results/serve.csv` after `python bench/parse.py`.
+
+## Why not test every combination?
+
+5 models × 4 node counts × every mix of 8 tricks is hundreds of runs. We only run what answers our questions:
+
+| Part | What | Runs |
+|---|---|---|
+| Baseline grid | every model × every node count, no tricks (finds the cliff) | ~16 |
+| Tricks alone | each trick on 2–3 chosen cases, e.g. g4 on 1 node (good case) and g16 on 4 nodes (worst case) | ~15–20 |
+| Best combination | all helpful tricks together on the same cases (the optimised number) | ~5 |
+| Serving | 1–2 models, each trick alone, then best combination | ~10 |
+| **Total** | | **~50 jobs** |
+
+Training jobs take about 5–15 minutes each.
+
+## Why only g1–g16 and 1–8 nodes?
+
+- **g16 is already extreme** (expert width 512) and covers the granularity real models use (DeepSeek, Qwen). Smaller experts mostly add GPU inefficiency, which muddies the network result. If the cliff hasn't appeared by g16, add g32 (one line in `bench/train/models.sh`).
+- **8 nodes already sends ~88% of traffic over Slingshot**; more nodes only push that towards 100%. 16+ nodes cost far more GPU hours, wait longer in the queue, and may exceed course limits.
+- **Start small, then extend**: run the grid, see where the cliff is, and add points only where it's interesting (e.g. between g4 and g8, or one 16-node run if the 8-node line is still changing).
+- The **headline number** ("larger models score better") is separate: one or two runs with a much bigger model on as many nodes as we can get.
 
 ## The expected result
 
