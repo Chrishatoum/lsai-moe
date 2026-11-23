@@ -1,0 +1,766 @@
+nid007469:207703:207703 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid007469:207703:207703 [0] NCCL INFO Bootstrap: Using hsn0:172.28.44.36<0>
+nid007469:207703:207703 [0] NCCL INFO cudaDriverVersion 13020
+nid007469:207703:207703 [0] NCCL INFO NCCL version 2.27.3+cuda12.9
+nid007469:207703:207703 [0] NCCL INFO Comm config Blocking set to 1
+nid007469:207703:208392 [0] NCCL INFO NET/Plugin: Plugin name set by env to libnccl-net-ofi.so
+nid007469:207703:208392 [0] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v10)
+nid007469:207703:208392 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v10 symbol.
+nid007469:207703:208392 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v9 symbol.
+nid007469:207703:208392 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid007469:207703:208392 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+nid007469:207703:208392 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+nid007469:207703:208392 [0] NCCL INFO Successfully loaded external plugin ofi
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.21.1
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Using Libfabric version 2.7
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Using CUDA driver version 13020 with runtime 12090
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Plugin selected platform: Default
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207703:208392 [0] NCCL INFO NET/OFI NIC group 0 device #0 0002:01:00.0
+nid007469:207703:208392 [0] NCCL INFO NET/OFI NIC group 1 device #0 0010:01:00.0
+nid007469:207703:208392 [0] NCCL INFO NET/OFI NIC group 2 device #0 0020:01:00.0
+nid007469:207703:208392 [0] NCCL INFO NET/OFI NIC group 3 device #0 0030:01:00.0
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Support for global registrations: false
+nid007469:207703:208392 [0] NCCL INFO NET/OFI Support for DMA-BUF registrations: true
+nid007469:207703:208392 [0] NCCL INFO Initialized NET plugin AWS Libfabric
+nid007469:207703:208392 [0] NCCL INFO Assigned NET plugin AWS Libfabric to comm
+nid007469:207703:208392 [0] NCCL INFO Using network AWS Libfabric
+nid007469:207703:208392 [0] NCCL INFO DMA-BUF is available on GPU device 0
+nid007469:207703:208392 [0] NCCL INFO ncclCommInitRankConfig comm 0x398889c0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 901000 commId 0x2beae572ebc0b261 - Init START
+nid007469:207703:208392 [0] NCCL INFO RAS client listening socket at ::1<28028>
+nid007469:207703:208392 [0] NCCL INFO Bootstrap timings total 0.001375 (create 0.000044, send 0.000112, recv 0.000379, ring 0.000285, delay 0.000001)
+nid007469:207703:208392 [0] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+nid007469:207703:208392 [0] NCCL INFO NCCL_PXN_DISABLE set by environment to 1.
+nid007469:207703:208392 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid007469:207703:208392 [0] NCCL INFO NCCL_NET_GDR_C2C set by environment to 1.
+nid007469:207703:208392 [0] NCCL INFO Setting affinity for GPU 0 to 0-71
+nid007469:207703:208392 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+nid007469:207703:208392 [0] NCCL INFO comm 0x398889c0 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+nid007469:207703:208392 [0] NCCL INFO Channel 00/24 : 0 1 2 3
+nid007469:207703:208392 [0] NCCL INFO Channel 01/24 : 0 1 3 2
+nid007469:207703:208392 [0] NCCL INFO Channel 02/24 : 0 2 3 1
+nid007469:207703:208392 [0] NCCL INFO Channel 03/24 : 0 2 1 3
+nid007469:207703:208392 [0] NCCL INFO Channel 04/24 : 0 3 1 2
+nid007469:207703:208392 [0] NCCL INFO Channel 05/24 : 0 3 2 1
+nid007469:207703:208392 [0] NCCL INFO Channel 06/24 : 0 1 2 3
+nid007469:207703:208392 [0] NCCL INFO Channel 07/24 : 0 1 3 2
+nid007469:207703:208392 [0] NCCL INFO Channel 08/24 : 0 2 3 1
+nid007469:207703:208392 [0] NCCL INFO Channel 09/24 : 0 2 1 3
+nid007469:207703:208392 [0] NCCL INFO Channel 10/24 : 0 3 1 2
+nid007469:207703:208392 [0] NCCL INFO Channel 11/24 : 0 3 2 1
+nid007469:207703:208392 [0] NCCL INFO Channel 12/24 : 0 1 2 3
+nid007469:207703:208392 [0] NCCL INFO Channel 13/24 : 0 1 3 2
+nid007469:207703:208392 [0] NCCL INFO Channel 14/24 : 0 2 3 1
+nid007469:207703:208392 [0] NCCL INFO Channel 15/24 : 0 2 1 3
+nid007469:207703:208392 [0] NCCL INFO Channel 16/24 : 0 3 1 2
+nid007469:207703:208392 [0] NCCL INFO Channel 17/24 : 0 3 2 1
+nid007469:207703:208392 [0] NCCL INFO Channel 18/24 : 0 1 2 3
+nid007469:207703:208392 [0] NCCL INFO Channel 19/24 : 0 1 3 2
+nid007469:207703:208392 [0] NCCL INFO Channel 20/24 : 0 2 3 1
+nid007469:207703:208392 [0] NCCL INFO Channel 21/24 : 0 2 1 3
+nid007469:207703:208392 [0] NCCL INFO Channel 22/24 : 0 3 1 2
+nid007469:207703:208392 [0] NCCL INFO Channel 23/24 : 0 3 2 1
+nid007469:207703:208392 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 2/-1/-1->0->-1 [5] 2/-1/-1->0->-1 [6] 2/-1/-1->0->-1 [7] 2/-1/-1->0->-1 [8] 3/-1/-1->0->1 [9] 3/-1/-1->0->1 [10] 3/-1/-1->0->1 [11] 3/-1/-1->0->1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1 [16] 2/-1/-1->0->-1 [17] 2/-1/-1->0->-1 [18] 2/-1/-1->0->-1 [19] 2/-1/-1->0->-1 [20] 3/-1/-1->0->1 [21] 3/-1/-1->0->1 [22] 3/-1/-1->0->1 [23] 3/-1/-1->0->1
+nid007469:207703:208392 [0] NCCL INFO P2P Chunksize set to 524288
+nid007469:207703:208392 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid007469:207703:208392 [0] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0
+nid007469:207703:208429 [0] NCCL INFO [Proxy Service] Device 0 CPU core 38
+nid007469:207703:208430 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 39
+nid007469:207703:208392 [0] NCCL INFO NCCL_PROTO set by environment to ^LL128
+nid007469:207703:208392 [0] NCCL INFO Enabled NCCL Func/Proto/Algo Matrix:
+     Function |       LL     LL128    Simple   |          Tree           Ring  CollNetDirect   CollNetChain           NVLS       NVLSTree            PAT  
+    Broadcast |        1         0         1   |             1              1              1              1              1              1              1  
+       Reduce |        1         0         1   |             1              1              1              1              1              1              1  
+    AllGather |        1         0         1   |             1              1              1              1              1              1              1  
+ReduceScatter |        1         0         1   |             1              1              1              1              1              1              1  
+    AllReduce |        1         0         1   |             1              1              1              1              1              1              1  
+
+nid007469:207703:208392 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+nid007469:207703:208392 [0] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 16 p2p channels per peer
+nid007469:207703:208392 [0] NCCL INFO CC Off, workFifoBytes 1048576
+nid007469:207703:208392 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid007469:207703:208392 [0] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v4 symbol.
+nid007469:207703:208392 [0] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v3 symbol.
+nid007469:207703:208392 [0] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2 symbol, using internal tuner instead.
+nid007469:207703:208392 [0] NCCL INFO ncclCommInitRankConfig comm 0x398889c0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 901000 commId 0x2beae572ebc0b261 - Init COMPLETE
+nid007469:207703:208392 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 4 total 4.90 (kernels 0.14, alloc 4.65, bootstrap 0.00, allgathers 0.00, topo 0.03, graphs 0.01, connections 0.05, rest 0.02)
+nid007469:207703:208435 [0] NCCL INFO Channel 01/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207705:207705 [2] NCCL INFO cudaDriverVersion 13020
+nid007469:207705:207705 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid007469:207705:207705 [2] NCCL INFO Bootstrap: Using hsn0:172.28.44.36<0>
+nid007469:207705:207705 [2] NCCL INFO NCCL version 2.27.3+cuda12.9
+nid007469:207705:207705 [2] NCCL INFO Comm config Blocking set to 1
+nid007469:207705:208395 [2] NCCL INFO NET/Plugin: Plugin name set by env to libnccl-net-ofi.so
+nid007469:207705:208395 [2] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v10)
+nid007469:207705:208395 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v10 symbol.
+nid007469:207705:208395 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v9 symbol.
+nid007469:207705:208395 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid007469:207705:208395 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+nid007469:207705:208395 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+nid007469:207705:208395 [2] NCCL INFO Successfully loaded external plugin ofi
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.21.1
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Using Libfabric version 2.7
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Using CUDA driver version 13020 with runtime 12090
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Plugin selected platform: Default
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207705:208395 [2] NCCL INFO NET/OFI NIC group 0 device #0 0002:01:00.0
+nid007469:207705:208395 [2] NCCL INFO NET/OFI NIC group 1 device #0 0010:01:00.0
+nid007469:207705:208395 [2] NCCL INFO NET/OFI NIC group 2 device #0 0020:01:00.0
+nid007469:207705:208395 [2] NCCL INFO NET/OFI NIC group 3 device #0 0030:01:00.0
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Support for global registrations: false
+nid007469:207705:208395 [2] NCCL INFO NET/OFI Support for DMA-BUF registrations: true
+nid007469:207705:208395 [2] NCCL INFO Initialized NET plugin AWS Libfabric
+nid007469:207705:208395 [2] NCCL INFO Assigned NET plugin AWS Libfabric to comm
+nid007469:207705:208395 [2] NCCL INFO Using network AWS Libfabric
+nid007469:207705:208395 [2] NCCL INFO DMA-BUF is available on GPU device 2
+nid007469:207705:208395 [2] NCCL INFO ncclCommInitRankConfig comm 0xf096b50 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 2901000 commId 0x2beae572ebc0b261 - Init START
+nid007469:207705:208395 [2] NCCL INFO RAS client listening socket at ::1<28028>
+nid007469:207705:208395 [2] NCCL INFO Bootstrap timings total 0.001474 (create 0.000054, send 0.000133, recv 0.000248, ring 0.000094, delay 0.000001)
+nid007469:207705:208395 [2] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+nid007469:207705:208395 [2] NCCL INFO NCCL_PXN_DISABLE set by environment to 1.
+nid007469:207705:208395 [2] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid007469:207705:208395 [2] NCCL INFO NCCL_NET_GDR_C2C set by environment to 1.
+nid007469:207705:208395 [2] NCCL INFO Setting affinity for GPU 2 to 144-215
+nid007469:207705:208395 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+nid007469:207705:208395 [2] NCCL INFO comm 0xf096b50 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+nid007469:207705:208395 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 1/-1/-1->2->0 [5] 1/-1/-1->2->0 [6] 1/-1/-1->2->0 [7] 1/-1/-1->2->0 [8] -1/-1/-1->2->3 [9] -1/-1/-1->2->3 [10] -1/-1/-1->2->3 [11] -1/-1/-1->2->3 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1 [16] 1/-1/-1->2->0 [17] 1/-1/-1->2->0 [18] 1/-1/-1->2->0 [19] 1/-1/-1->2->0 [20] -1/-1/-1->2->3 [21] -1/-1/-1->2->3 [22] -1/-1/-1->2->3 [23] -1/-1/-1->2->3
+nid007469:207705:208395 [2] NCCL INFO P2P Chunksize set to 524288
+nid007469:207705:208395 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid007469:207705:208420 [2] NCCL INFO [Proxy Service] Device 2 CPU core 156
+nid007469:207705:208421 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 159
+nid007469:207705:208395 [2] NCCL INFO NCCL_PROTO set by environment to ^LL128
+nid007469:207705:208395 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+nid007469:207705:208395 [2] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 16 p2p channels per peer
+nid007469:207705:208395 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid007469:207705:208395 [2] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v4 symbol.
+nid007469:207705:208395 [2] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v3 symbol.
+nid007469:207705:208395 [2] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2 symbol, using internal tuner instead.
+nid007469:207705:208395 [2] NCCL INFO ncclCommInitRankConfig comm 0xf096b50 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 2901000 commId 0x2beae572ebc0b261 - Init COMPLETE
+nid007469:207705:208395 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 4 total 4.88 (kernels 0.12, alloc 4.65, bootstrap 0.00, allgathers 0.00, topo 0.03, graphs 0.01, connections 0.05, rest 0.02)
+nid007469:207705:208433 [2] NCCL INFO Channel 01/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 03/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 05/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 07/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 09/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 11/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 13/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 15/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 17/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 19/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 21/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 23/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 25/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 27/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 29/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 31/1 : 2[2] -> 3[3] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 01/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 03/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 05/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 07/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 09/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 11/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 13/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 15/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 17/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 19/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 21/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 23/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 25/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 27/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 29/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 31/1 : 2[2] -> 0[0] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 00/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 02/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207704:207704 [1] NCCL INFO cudaDriverVersion 13020
+nid007469:207704:207704 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid007469:207704:207704 [1] NCCL INFO Bootstrap: Using hsn0:172.28.44.36<0>
+nid007469:207704:207704 [1] NCCL INFO NCCL version 2.27.3+cuda12.9
+nid007469:207704:207704 [1] NCCL INFO Comm config Blocking set to 1
+nid007469:207704:208394 [1] NCCL INFO NET/Plugin: Plugin name set by env to libnccl-net-ofi.so
+nid007469:207704:208394 [1] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v10)
+nid007469:207704:208394 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v10 symbol.
+nid007469:207704:208394 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v9 symbol.
+nid007469:207704:208394 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid007469:207704:208394 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+nid007469:207704:208394 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+nid007469:207704:208394 [1] NCCL INFO Successfully loaded external plugin ofi
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.21.1
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Using Libfabric version 2.7
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Using CUDA driver version 13020 with runtime 12090
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Plugin selected platform: Default
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207704:208394 [1] NCCL INFO NET/OFI NIC group 0 device #0 0002:01:00.0
+nid007469:207704:208394 [1] NCCL INFO NET/OFI NIC group 1 device #0 0010:01:00.0
+nid007469:207704:208394 [1] NCCL INFO NET/OFI NIC group 2 device #0 0020:01:00.0
+nid007469:207704:208394 [1] NCCL INFO NET/OFI NIC group 3 device #0 0030:01:00.0
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Support for global registrations: false
+nid007469:207704:208394 [1] NCCL INFO NET/OFI Support for DMA-BUF registrations: true
+nid007469:207704:208394 [1] NCCL INFO Initialized NET plugin AWS Libfabric
+nid007469:207704:208394 [1] NCCL INFO Assigned NET plugin AWS Libfabric to comm
+nid007469:207704:208394 [1] NCCL INFO Using network AWS Libfabric
+nid007469:207704:208394 [1] NCCL INFO DMA-BUF is available on GPU device 1
+nid007469:207704:208394 [1] NCCL INFO ncclCommInitRankConfig comm 0xa976b10 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 1901000 commId 0x2beae572ebc0b261 - Init START
+nid007469:207704:208394 [1] NCCL INFO RAS client listening socket at ::1<28028>
+nid007469:207704:208394 [1] NCCL INFO Bootstrap timings total 0.001383 (create 0.000050, send 0.000130, recv 0.000483, ring 0.000145, delay 0.000001)
+nid007469:207704:208394 [1] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+nid007469:207704:208394 [1] NCCL INFO NCCL_PXN_DISABLE set by environment to 1.
+nid007469:207704:208394 [1] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid007469:207704:208394 [1] NCCL INFO NCCL_NET_GDR_C2C set by environment to 1.
+nid007469:207704:208394 [1] NCCL INFO Setting affinity for GPU 1 to 72-143
+nid007469:207704:208394 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+nid007469:207704:208394 [1] NCCL INFO comm 0xa976b10 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+nid007469:207704:208394 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 3/-1/-1->1->2 [5] 3/-1/-1->1->2 [6] 3/-1/-1->1->2 [7] 3/-1/-1->1->2 [8] 0/-1/-1->1->-1 [9] 0/-1/-1->1->-1 [10] 0/-1/-1->1->-1 [11] 0/-1/-1->1->-1 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0 [16] 3/-1/-1->1->2 [17] 3/-1/-1->1->2 [18] 3/-1/-1->1->2 [19] 3/-1/-1->1->2 [20] 0/-1/-1->1->-1 [21] 0/-1/-1->1->-1 [22] 0/-1/-1->1->-1 [23] 0/-1/-1->1->-1
+nid007469:207704:208394 [1] NCCL INFO P2P Chunksize set to 524288
+nid007469:207704:208394 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid007469:207704:208422 [1] NCCL INFO [Proxy Service] Device 1 CPU core 108
+nid007469:207704:208423 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 109
+nid007469:207704:208394 [1] NCCL INFO NCCL_PROTO set by environment to ^LL128
+nid007469:207704:208394 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+nid007469:207704:208394 [1] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 16 p2p channels per peer
+nid007469:207704:208394 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid007469:207704:208394 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v4 symbol.
+nid007469:207704:208394 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v3 symbol.
+nid007469:207704:208394 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2 symbol, using internal tuner instead.
+nid007469:207704:208394 [1] NCCL INFO ncclCommInitRankConfig comm 0xa976b10 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 1901000 commId 0x2beae572ebc0b261 - Init COMPLETE
+nid007469:207704:208394 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 4 total 4.88 (kernels 0.12, alloc 4.65, bootstrap 0.00, allgathers 0.00, topo 0.03, graphs 0.01, connections 0.05, rest 0.02)
+nid007469:207704:208432 [1] NCCL INFO Channel 01/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 03/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 05/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 07/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 09/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 11/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 13/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 15/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 17/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 19/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 21/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 23/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 25/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 27/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 29/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 31/1 : 1[1] -> 2[2] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 01/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 03/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 05/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 07/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 09/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 11/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 13/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 15/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 17/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 19/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 21/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 23/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 25/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 27/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 29/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 31/1 : 1[1] -> 3[3] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 00/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 02/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207706:207706 [3] NCCL INFO cudaDriverVersion 13020
+nid007469:207706:207706 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid007469:207706:207706 [3] NCCL INFO Bootstrap: Using hsn0:172.28.44.36<0>
+nid007469:207706:207706 [3] NCCL INFO NCCL version 2.27.3+cuda12.9
+nid007469:207706:207706 [3] NCCL INFO Comm config Blocking set to 1
+nid007469:207706:208393 [3] NCCL INFO NET/Plugin: Plugin name set by env to libnccl-net-ofi.so
+nid007469:207706:208393 [3] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v10)
+nid007469:207706:208393 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v10 symbol.
+nid007469:207706:208393 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v9 symbol.
+nid007469:207706:208393 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid007469:207706:208393 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+nid007469:207706:208393 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v6 symbol.
+nid007469:207706:208393 [3] NCCL INFO Successfully loaded external plugin ofi
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.21.1
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Using Libfabric version 2.7
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Using CUDA driver version 13020 with runtime 12090
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Plugin selected platform: Default
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207706:208393 [3] NCCL INFO NET/OFI NIC group 0 device #0 0002:01:00.0
+nid007469:207706:208393 [3] NCCL INFO NET/OFI NIC group 1 device #0 0010:01:00.0
+nid007469:207706:208393 [3] NCCL INFO NET/OFI NIC group 2 device #0 0020:01:00.0
+nid007469:207706:208393 [3] NCCL INFO NET/OFI NIC group 3 device #0 0030:01:00.0
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Selected provider is cxi, fabric is cxi (found 4 nics)
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Support for global registrations: false
+nid007469:207706:208393 [3] NCCL INFO NET/OFI Support for DMA-BUF registrations: true
+nid007469:207706:208393 [3] NCCL INFO Initialized NET plugin AWS Libfabric
+nid007469:207706:208393 [3] NCCL INFO Assigned NET plugin AWS Libfabric to comm
+nid007469:207706:208393 [3] NCCL INFO Using network AWS Libfabric
+nid007469:207706:208393 [3] NCCL INFO DMA-BUF is available on GPU device 3
+nid007469:207706:208393 [3] NCCL INFO ncclCommInitRankConfig comm 0x25e56a80 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 3901000 commId 0x2beae572ebc0b261 - Init START
+nid007469:207706:208393 [3] NCCL INFO RAS client listening socket at ::1<28028>
+nid007469:207706:208393 [3] NCCL INFO Bootstrap timings total 0.001558 (create 0.000044, send 0.000123, recv 0.000495, ring 0.000325, delay 0.000000)
+nid007469:207706:208393 [3] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+nid007469:207706:208393 [3] NCCL INFO NCCL_PXN_DISABLE set by environment to 1.
+nid007469:207706:208393 [3] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid007469:207706:208393 [3] NCCL INFO NCCL_NET_GDR_C2C set by environment to 1.
+nid007469:207706:208393 [3] NCCL INFO Setting affinity for GPU 3 to 216-287
+nid007469:207706:208393 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+nid007469:207706:208393 [3] NCCL INFO comm 0x25e56a80 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+nid007469:207706:208393 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->1 [5] -1/-1/-1->3->1 [6] -1/-1/-1->3->1 [7] -1/-1/-1->3->1 [8] 2/-1/-1->3->0 [9] 2/-1/-1->3->0 [10] 2/-1/-1->3->0 [11] 2/-1/-1->3->0 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2 [16] -1/-1/-1->3->1 [17] -1/-1/-1->3->1 [18] -1/-1/-1->3->1 [19] -1/-1/-1->3->1 [20] 2/-1/-1->3->0 [21] 2/-1/-1->3->0 [22] 2/-1/-1->3->0 [23] 2/-1/-1->3->0
+nid007469:207706:208393 [3] NCCL INFO P2P Chunksize set to 524288
+nid007469:207706:208393 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+nid007469:207706:208424 [3] NCCL INFO [Proxy Service] Device 3 CPU core 285
+nid007469:207706:208425 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 286
+nid007469:207706:208393 [3] NCCL INFO NCCL_PROTO set by environment to ^LL128
+nid007469:207706:208393 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+nid007469:207706:208393 [3] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 16 p2p channels per peer
+nid007469:207706:208393 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+nid007469:207706:208393 [3] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v4 symbol.
+nid007469:207706:208393 [3] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v3 symbol.
+nid007469:207706:208393 [3] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2 symbol, using internal tuner instead.
+nid007469:207706:208393 [3] NCCL INFO ncclCommInitRankConfig comm 0x25e56a80 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 3901000 commId 0x2beae572ebc0b261 - Init COMPLETE
+nid007469:207706:208393 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 4.88 (kernels 0.13, alloc 4.65, bootstrap 0.00, allgathers 0.00, topo 0.03, graphs 0.01, connections 0.05, rest 0.02)
+nid007469:207706:208434 [3] NCCL INFO Channel 01/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 03/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 05/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 07/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 09/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 11/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 13/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 15/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 17/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 19/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 21/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 23/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 25/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 27/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 29/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 31/1 : 3[3] -> 0[0] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 01/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 03/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 05/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 07/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 09/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 11/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 13/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 15/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 17/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 19/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 21/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 23/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 25/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 27/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 29/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 31/1 : 3[3] -> 1[1] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 00/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 02/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO gpus=  4 size=   1MB busbw=   20.4GB/s
+gpus=  4 size=   4MB busbw=   79.8GB/s
+gpus=  4 size=  16MB busbw=  166.0GB/s
+gpus=  4 size=  64MB busbw=  222.6GB/s
+gpus=  4 size= 256MB busbw=  262.5GB/s
+nid007469:207705:208433 [2] NCCL INFO Channel 04/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 06/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 08/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 10/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 12/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 14/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 16/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 18/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 20/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 22/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 24/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 26/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 28/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:208433 [2] NCCL INFO Channel 30/1 : 2[2] -> 1[1] via P2P/CUMEM
+nid007469:207705:207705 [2] NCCL INFO comm 0xf096b50 rank 2 nranks 4 cudaDev 2 busId 2901000 - Destroy COMPLETE
+nid007469:207704:208432 [1] NCCL INFO Channel 04/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 06/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 08/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 10/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 12/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 14/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 16/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 18/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 20/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 22/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 24/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 26/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 28/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:208432 [1] NCCL INFO Channel 30/1 : 1[1] -> 0[0] via P2P/CUMEM
+nid007469:207704:207704 [1] NCCL INFO comm 0xa976b10 rank 1 nranks 4 cudaDev 1 busId 1901000 - Destroy COMPLETE
+nid007469:207706:208434 [3] NCCL INFO Channel 04/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 06/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 08/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 10/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 12/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 14/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 16/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 18/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 20/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 22/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 24/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 26/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 28/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:208434 [3] NCCL INFO Channel 30/1 : 3[3] -> 2[2] via P2P/CUMEM
+nid007469:207706:207706 [3] NCCL INFO comm 0x25e56a80 rank 3 nranks 4 cudaDev 3 busId 3901000 - Destroy COMPLETE
+Channel 03/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 05/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 07/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 09/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 11/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 13/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 15/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 17/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 19/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 21/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 23/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 25/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 27/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 29/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 31/1 : 0[0] -> 1[1] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 01/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 03/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 05/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 07/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 09/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 11/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 13/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 15/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 17/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 19/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 21/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 23/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 25/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 27/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 29/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 31/1 : 0[0] -> 2[2] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 00/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 02/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 04/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 06/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 08/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 10/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 12/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 14/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 16/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 18/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 20/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 22/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 24/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 26/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 28/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:208435 [0] NCCL INFO Channel 30/1 : 0[0] -> 3[3] via P2P/CUMEM
+nid007469:207703:207703 [0] NCCL INFO comm 0x398889c0 rank 0 nranks 4 cudaDev 0 busId 901000 - Destroy COMPLETE
+[E1122 23:20:33.529510978 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:20:33.531054131 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=49998ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x40001317d47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x400010c09230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x400010c55ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x400010c59904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x400010c59bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x400010c5a04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x400010c0c55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x400010c10688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x40000afbb284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x40000b03d1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x40000a6073c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x40000a67314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x4000095484c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x400009548598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[E1122 23:20:35.523783686 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:20:35.525969186 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=39881ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x40002ccdd47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x40002a769230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x40002a7b5ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x40002a7b9904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x40002a7b9bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x40002a7ba04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x40002a76c55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x40002a770688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x400024b1b284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x400024b9d1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x4000241673c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x4000241d314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x4000230a84c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x4000230a8598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[E1122 23:21:01.896614466 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:21:01.896835292 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=53071ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x400039edd47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x400037969230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x4000379b5ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x4000379b9904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x4000379b9bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x4000379ba04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x40003796c55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x400037970688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x400031d1b284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x400031d9d1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x4000313673c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x4000313d314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x4000302a84c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x4000302a8598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[E1122 23:21:07.910283016 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:21:07.910524064 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=59919ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x40003488d47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x400032319230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x400032365ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x400032369904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x400032369bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x40003236a04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x40003231c55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x400032320688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x40002c6cb284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x40002c74d1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x40002bd173c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x40002bd8314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x40002ac584c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x40002ac58598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[E1122 23:21:10.674785527 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:21:10.675086094 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=69807ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x40002c38d47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x400029e19230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x400029e65ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x400029e69904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x400029e69bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x400029e6a04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x400029e1c55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x400029e20688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x4000241cb284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x40002424d1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x4000238173c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x40002388314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x4000227584c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x400022758598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[E1122 23:21:12.148190724 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:21:12.148504666 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=70451ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x40003594d47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x4000333d9230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x400033425ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x400033429904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x400033429bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x40003342a04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x4000333dc55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x4000333e0688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x40002d78b284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x40002d80d1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x40002cdd73c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x40002ce4314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x40002bd184c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x40002bd18598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[E1122 23:21:22.165431385 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:21:22.165722928 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=32857ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x400011c7d47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x40000f709230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x40000f755ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x40000f759904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x40000f759bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x40000f75a04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x40000f70c55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x40000f710688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x400009abb284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x400009b3d1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x4000091073c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x40000917314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x4000080484c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x400008048598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[E1122 23:21:22.154172450 socket.cpp:1019] [c10d] The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+[W1122 23:21:22.154476088 TCPStore.cpp:332] [c10d] TCP client failed to connect/validate to host nid007469:29500 - retrying (try=0, timeout=600000ms, delay=49468ms): The client socket has timed out after 600000ms while trying to connect to (nid007469, 29500).
+Exception raised from throwTimeoutError at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/socket.cpp:1021 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xbc (0x400022d0d47c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ac9230 (0x400020799230 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5b15ddc (0x4000207e5ddc in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5b19904 (0x4000207e9904 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: <unknown function> + 0x5b19bd4 (0x4000207e9bd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: <unknown function> + 0x5b1a04c (0x4000207ea04c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0x5acc55c (0x40002079c55c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #7: c10d::TCPStore::TCPStore(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, c10d::TCPStoreOptions const&) + 0x358 (0x4000207a0688 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so)
+frame #8: <unknown function> + 0xf4b284 (0x40001ab4b284 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xfcd1d0 (0x40001abcd1d0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x5973c0 (0x40001a1973c0 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python() [0x5036b4]
+frame #12: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #13: /usr/bin/python() [0x4c6fb0]
+frame #14: _PyObject_Call + 0x104 (0x4c5594 in /usr/bin/python)
+frame #15: /usr/bin/python() [0x522708]
+frame #16: /usr/bin/python() [0x51dca4]
+frame #17: <unknown function> + 0x60314c (0x40001a20314c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #18: _PyObject_MakeTpCall + 0x130 (0x4c2d50 in /usr/bin/python)
+frame #19: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #20: /usr/bin/python() [0x4d0b10]
+frame #21: /usr/bin/python() [0x560574]
+frame #22: /usr/bin/python() [0x5037c0]
+frame #23: PyObject_Vectorcall + 0x4c (0x4c384c in /usr/bin/python)
+frame #24: _PyEval_EvalFrameDefault + 0x8a0 (0x563eb4 in /usr/bin/python)
+frame #25: PyEval_EvalCode + 0x130 (0x562204 in /usr/bin/python)
+frame #26: /usr/bin/python() [0x59c3c4]
+frame #27: /usr/bin/python() [0x680e94]
+frame #28: _PyRun_SimpleFileObject + 0x194 (0x680a68 in /usr/bin/python)
+frame #29: _PyRun_AnyFileObject + 0x54 (0x680834 in /usr/bin/python)
+frame #30: Py_RunMain + 0x2dc (0x68b83c in /usr/bin/python)
+frame #31: Py_BytesMain + 0x28 (0x68b3f8 in /usr/bin/python)
+frame #32: <unknown function> + 0x284c4 (0x4000190d84c4 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #33: __libc_start_main + 0x98 (0x4000190d8598 in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #34: _start + 0x30 (0x5f6df0 in /usr/bin/python)
+
+[2026-11-22T23:26:03.010] error: *** STEP 4005622.1 ON nid007470 CANCELLED AT 2026-11-22T23:26:03 DUE TO TIME LIMIT ***
+[2026-11-22T23:26:03.012] error: *** JOB 4005622 ON nid007469 CANCELLED AT 2026-11-22T23:26:03 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
